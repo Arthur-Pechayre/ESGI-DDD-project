@@ -1,0 +1,16 @@
+{
+    "name": "arthur_pechayre/esgi_ddd_project",
+    "type": "project",
+    "require": {
+        "phpunit/phpunit": "^9.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.1"
+    },
+    "authors": [
+        {
+            "name": "Arthur Pechayre",
+            "email": "art.pechayre@gmail.com"
+        }
+    ]
+}
