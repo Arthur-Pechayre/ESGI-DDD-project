@@ -2,7 +2,7 @@
 
 namespace Model;
 
-class RendezVous
+class ProfilTechnique
 {
 
 }

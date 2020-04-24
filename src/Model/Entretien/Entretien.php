@@ -2,7 +2,7 @@
 
 namespace Model;
 
-abstract class Personne
+class Entretien
 {
 
 }
