@@ -13,4 +13,4 @@ Bonjour, je vais vous montrer:
 - le résultat
 
 Le lien sera ajouté ICI quand j'aurais uploadé sur Youtube (après minuit)
-
+LIEN : https://youtu.be/eRdIWtBduXU
