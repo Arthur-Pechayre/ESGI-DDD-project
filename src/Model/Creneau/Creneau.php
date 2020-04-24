@@ -2,7 +2,6 @@
 
 namespace App\Model\Creneau;
 
-use App\Exception\CreneauIsWeekendException;
 use Carbon\Carbon;
 
 class Creneau

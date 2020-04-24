@@ -3,7 +3,8 @@
     "type": "project",
     "require": {
         "phpunit/phpunit": "^9.1",
-        "nesbot/carbon": "^2.32"
+        "nesbot/carbon": "^2.32",
+        "fzaninotto/faker": "^1.9"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.1"

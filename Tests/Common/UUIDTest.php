@@ -1,6 +1,6 @@
 <?php
 
-use App\model\UUID;
+use App\Common\Model\UUID;
 use PHPUnit\Framework\TestCase;
 
 class UUIDTest extends TestCase

@@ -2,16 +2,16 @@
 
 namespace App\Model\Salle;
 
-use App\Exception\PropertyShouldNotBeEmptyException;
-use App\Model\Creneau\Creneau;
-use App\model\UUID;
+use App\Common\Exception\PropertyShouldNotBeEmptyException;
+use App\Common\Model\UUID;
+use App\Model\Planning\Planning;
 
 class Salle
 {
     /**
-     * @var array
+     * @var Planning
      */
-    private array $creneauxPris;
+    private Planning $planning;
 
     /**
      * @var UUID
@@ -30,7 +30,7 @@ class Salle
 
     /**
      * Salle constructor.
-     * @param UUID $id
+     * @param string $id
      * @param array $creneauxPris
      * @param string $nom
      * @param string $adresse
@@ -38,46 +38,40 @@ class Salle
      * @throws PropertyShouldNotBeEmptyException
      */
     public function __construct(
-        UUID $id,
+        string $id,
         $creneauxPris,
         string $nom,
         string $adresse,
         string $etage
     ) {
-        if (empty($this->disponibilite)) {
-            throw new PropertyShouldNotBeEmptyException("Missing disponibilite");
+        if (empty($id)) {
+            throw new PropertyShouldNotBeEmptyException("Missing id");
         }
 
-        if (empty($this->nom)) {
+        if (empty($nom)) {
             throw new PropertyShouldNotBeEmptyException("Missing nom");
         }
 
-
-
-        $this->creneauxPris = $creneauxPris;
+        $this->id = new UUID($id);
+        $this->planning = new Planning($creneauxPris);
         $this->nom = $nom;
         $this->emplacement = new EmplacementSalle($adresse, $etage);
     }
 
-    public function estDisponible(Creneau $creneau)
+    /**
+     * @return Planning
+     */
+    public function getPlanning(): Planning
     {
-
+        return $this->planning;
     }
 
     /**
-     * @return array
+     * @param Planning $planning
      */
-    public function getDisponibilite(): array
+    public function setPlanning(Planning $planning): void
     {
-        return $this->disponibilite;
-    }
-
-    /**
-     * @param array $disponibilite
-     */
-    public function setDisponibilite(array $disponibilite): void
-    {
-        $this->disponibilite = $disponibilite;
+        $this->planning = $planning;
     }
 
     /**

@@ -2,8 +2,8 @@
 
 namespace App\Model\Salle;
 
-use App\Model\Infrastructure\Repository;
+use App\Common\Model\BaseRepository;
 
-Interface Salles extends Repository
+Interface Salles extends BaseRepository
 {
 }

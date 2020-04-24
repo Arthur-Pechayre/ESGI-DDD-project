@@ -1,10 +1,7 @@
 <?php
 
-
-namespace App\Exception;
-
+namespace App\Common\Exception;
 
 class PropertyShouldNotBeEmptyException extends \Exception
 {
-
 }

@@ -2,7 +2,7 @@
 
 namespace App\Model\Salle;
 
-use App\Exception\PropertyShouldNotBeEmptyException;
+use App\Common\Exception\PropertyShouldNotBeEmptyException;
 
 class EmplacementSalle
 {
@@ -24,15 +24,15 @@ class EmplacementSalle
      */
     public function __construct(string $adresse, string $etage)
     {
-        if (empty($this->adresse)) {
+        if (empty($adresse)) {
             throw new PropertyShouldNotBeEmptyException("Missing adresse");
         }
 
-        if (empty($this->etage)) {
+        if (empty($etage)) {
             throw new PropertyShouldNotBeEmptyException("Missing etage");
         }
 
-        $this->adresse = $adresse ??
+        $this->adresse = $adresse;
         $this->etage = $etage;
     }
 

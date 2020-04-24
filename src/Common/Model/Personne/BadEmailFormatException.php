@@ -1,10 +1,7 @@
 <?php
 
-
-namespace App\Exception;
-
+namespace App\Common\Model\Personne;
 
 class BadEmailFormatException extends \Exception
 {
-
 }

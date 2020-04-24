@@ -1,8 +1,6 @@
 <?php
 
-
-namespace App\Exception;
-
+namespace App\Model\Creneau;
 
 class CreneauIsWeekendException extends \Exception
 {

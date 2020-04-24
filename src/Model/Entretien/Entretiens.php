@@ -1,10 +1,9 @@
 <?php
 
-
 namespace App\Model\Entretien;
 
+use App\Common\Model\BaseRepository;
 
-interface Entretiens
+interface Entretiens extends BaseRepository
 {
-
 }

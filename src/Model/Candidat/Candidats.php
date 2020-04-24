@@ -2,7 +2,9 @@
 
 namespace App\Model\Candidat;
 
-interface Candidats
+use App\Common\Model\BaseRepository;
+
+interface Candidats extends BaseRepository
 {
 
 }

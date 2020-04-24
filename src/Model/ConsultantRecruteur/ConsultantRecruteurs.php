@@ -2,7 +2,8 @@
 
 namespace App\Model\ConsultantRecruteur;
 
-interface ConsultantRecruteurs
-{
+use App\Common\Model\BaseRepository;
 
+interface ConsultantRecruteurs extends BaseRepository
+{
 }
