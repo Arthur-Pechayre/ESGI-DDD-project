@@ -1,6 +1,6 @@
 <?php
 
-namespace App\model;
+namespace App\Common\Model;
 
 class UUID
 {

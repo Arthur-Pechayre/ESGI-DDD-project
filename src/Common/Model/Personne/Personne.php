@@ -1,12 +1,17 @@
 <?php
 
-namespace App\Model;
+namespace App\Common\Model\Personne;
 
-use App\Exception\BadEmailFormatException;
-use App\Exception\PropertyShouldNotBeEmptyException;;
+use App\Common\Exception\PropertyShouldNotBeEmptyException;
+use App\Common\Model\UUID;
 
 abstract class Personne
 {
+    /**
+     * @var UUID
+     */
+    private UUID $id;
+
     /**
      * @var string
      */
@@ -22,17 +27,14 @@ abstract class Personne
      */
     private string $email;
 
-    /**
-     * @var Planning
-     */
-    private Planning $planning;
-
     public function __construct(
+        string $id,
         string $email,
         string $nom,
-        string $prenom,
-        array $creneauxPris
+        string $prenom
     ) {
+        $this->id = new UUID($id);
+
         if (empty($email)) {
             throw new PropertyShouldNotBeEmptyException("Email should not be empty");
         }
@@ -49,18 +51,17 @@ abstract class Personne
             throw new PropertyShouldNotBeEmptyException("Prenom should not be empty");
         }
 
-        $this->planning = new Planning($creneauxPris);
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->email = $email;
     }
 
     /**
-     * @param Planning $planning
+     * @return UUID
      */
-    public function setPlanning(Planning $planning): void
+    public function getId(): UUID
     {
-        $this->planning = $planning;
+        return $this->id;
     }
 
     /**
@@ -85,13 +86,5 @@ abstract class Personne
     public function getEmail(): string
     {
         return $this->email;
-    }
-
-    /**
-     * @return Planning
-     */
-    public function getPlanning(): Planning
-    {
-        return $this->planning;
     }
 }

@@ -1,10 +1,8 @@
 <?php
 
-namespace App\Model\Infrastructure;
+namespace App\Common\Model;
 
-use App\model\UUID;
-
-Interface Repository
+Interface BaseRepository
 {
     /**
      * @param UUID $id
@@ -25,8 +23,7 @@ Interface Repository
     function update($object);
 
     /**
-     * @param $object
      * @return mixed
      */
-    function all($object);
+    function all();
 }
